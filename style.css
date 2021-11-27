@@ -1,15 +1,3 @@
-/* 
-purple color - #B983FF
-light blue color - #94B3FD
-teal color - #94DAFF
-aqua color - #99FEFF
-
-///////////////////////////
-main black color - #171010
-light grey - #EEEEEE
-grey mid dark - #686D76
-grey dark - #373A40
-*/
 /* ==========================
 BASIC CSS
 ========================== */
@@ -21,6 +9,7 @@ BASIC CSS
 
 :root {
   --purple-color: #b983ff;
+  --purple-color-dark: #9863dd;
   --light-blue-color: #94b3fd;
   --teal-color: #94daff;
   --aqua-color: #99feff;
@@ -37,17 +26,26 @@ BASIC CSS
   --small-border-radius: 3px;
 }
 
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
 body {
   box-sizing: border-box;
   background: var(--purple-color);
-  font-family: "Open Sans", sans-serif;
-  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   color: var(--grey-dark);
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: auto;
 }
 
 .heading-primary {
@@ -55,7 +53,19 @@ body {
   color: var(--main-black-color);
   text-align: center;
   font-size: 400%;
-  margin: 25px 0;
+  margin: 2.5rem 0;
+}
+
+.win-score {
+  background: rgba(0, 128, 0, 0.65);
+  color: #fff;
+  border-bottom: 1px solid var(--grey-mid-dark);
+}
+
+.lose-score {
+  background: rgba(255, 0, 0, 0.65);
+  color: #fff;
+  border-bottom: 1px solid var(--grey-mid-dark);
 }
 
 span {
@@ -64,7 +74,7 @@ span {
 
 button {
   font-family: inherit;
-  padding: 7.5px 12px;
+  padding: 0.75rem 1.2rem;
   outline: none;
   border: none;
   border-radius: var(--small-border-radius);
@@ -77,28 +87,25 @@ button {
 GAME CONTAINER CSS
 ========================== */
 .game-container {
-  padding: 0 10% 20px;
+  padding: 0 10% 2rem;
 }
 
 /* ==========================
 HEADER CSS
 ========================== */
 .header {
-  margin: 10px 0;
-  padding: 10px 5%;
+  margin: 1rem 0;
+  padding: 1rem 5%;
   font-size: 200%;
   text-align: right;
   background-color: var(--light-blue-color);
   border-radius: var(--default-border-radius);
 }
 
-.score-label {
-}
-
 .score-view {
   border-radius: var(--default-border-radius);
   background-color: var(--purple-color);
-  min-width: 50px;
+  min-width: 5rem;
   text-align: center;
   color: #fff;
 }
@@ -108,18 +115,14 @@ GAME BODY CSS
 ========================== */
 
 .game-body {
-  background-image: linear-gradient(
-    to top right,
-    var(--teal-color),
-    var(--aqua-color)
-  );
-  min-height: 400px;
+  background-image: linear-gradient(to top right, var(--teal-color), var(--aqua-color));
+  min-height: 40rem;
   border-radius: var(--default-border-radius);
-  padding: 20px 3.5%;
+  padding: 2rem 3.5%;
 
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 2rem;
 }
 
 /* GAME SCREEN */
@@ -127,7 +130,7 @@ GAME BODY CSS
   flex-basis: 35%;
   background-color: var(--light-grey);
   border-radius: var(--default-border-radius);
-  padding: 15px;
+  padding: 1.5rem;
 
   display: flex;
   flex-direction: column;
@@ -140,10 +143,10 @@ GAME BODY CSS
   border-radius: 50%;
 }
 .coin-div-outer {
-  height: 150px;
-  width: 150px;
+  height: 15rem;
+  width: 15rem;
   background-color: var(--gold-color-transparent);
-  padding: 18px;
+  padding: 1.8rem;
   border-radius: 50%;
 }
 .coin-div-inner {
@@ -178,6 +181,13 @@ GAME BODY CSS
   color: #fff;
 }
 
+.game-buttons > button:first-child:active {
+  background-color: var(--purple-color);
+}
+.game-buttons > button:last-child:active {
+  background-color: transparent;
+}
+
 .game-buttons > button:first-child:hover,
 .game-buttons > button:last-child {
   background-color: transparent;
@@ -185,54 +195,76 @@ GAME BODY CSS
   color: var(--purple-color);
 }
 
+/* Score */
+.score-head {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  min-height: 6rem;
+  background: var(--light-blue-color);
+  padding: 0.8rem;
+  max-height: 8rem;
+  border-radius: var(--default-border-radius);
+}
+
+.score-head p {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.score-body > .player-last-five-scores,
+.score-body > .computer-last-five-scores {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.score-body > .player-last-five-scores li,
+.score-body > .computer-last-five-scores li {
+  min-height: 3.8rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 0 15%;
+  border-radius: var(--small-border-radius);
+}
+
+.score-foot {
+  margin-top: 2rem;
+  background: var(--gold-color);
+  color: var(--main-black-color);
+  font-weight: 600;
+  border-radius: var(--small-border-radius);
+  padding: 0.5rem 15%;
+  font-size: 2rem;
+}
+
 /* PLAYER SCORE */
 .player-score {
-  position: relative;
-  height: 40px;
-  flex-basis: 24%;
-  background-color: seagreen;
-  font-size: 250%;
-
+  height: 100%;
+  padding: 2rem 3.5%;
+  flex-basis: 28%;
+  background-color: var(--grey-mid-dark);
   border-radius: var(--default-border-radius);
 }
-.score-head {
-  position: relative;
-  top: 100px;
 
-  border-radius: var(--default-border-radius);
-}
-.player-score-head,
-.player-score-body,
-.player-score-foot {
-  background-color: seagreen;
-}
-
-.score-body {
-  position: relative;
-  top: 130px;
-
-  border-radius: var(--default-border-radius);
-}
-.score-foot {
-  position: relative;
-  top: 160px;
-  border-radius: var(--default-border-radius);
+img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
 }
 
 /* COMPUTER SCORE */
 .computer-score {
-  height: 40px;
-  flex-basis: 24%;
-  background-color: orange;
-  font-size: 250%;
-
+  height: 100%;
+  padding: 2rem 3.5%;
   border-radius: var(--default-border-radius);
+  flex-basis: 28%;
+  background-color: var(--grey-mid-dark);
 }
-.computer-score-head,
-.computer-score-body,
-.computer-score-foot {
-  background-color: orange;
-}
+
 /* ==========================
 FOOTER CSS
 ========================== */
@@ -241,5 +273,19 @@ FOOTER CSS
   color: #fff;
   font-size: 150%;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2rem;
+}
+
+/* ==========================
+MEDIA QUERIES
+========================== */
+
+@media only screen and (max-width: 1100px) {
+  html {
+    font-size: 58%;
+  }
+
+  .game-body {
+    flex-direction: column;
+  }
 }
