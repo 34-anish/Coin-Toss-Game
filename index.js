@@ -8,7 +8,7 @@ const totalComputerWins = document.querySelector('.total-wins .computer-wins');
 const playerLastFiveScores = document.querySelector('.player-last-five-scores');
 const computerLastFiveScores = document.querySelector('.computer-last-five-scores');
 
-// Game Variables
+// All Game Variables
 const playerScoreSpan = document.querySelector(".player-wins");
 const computerScoreSpan = document.querySelector(".computer-wins");
 const winPercetageSpan = document.querySelector(".score-view");
