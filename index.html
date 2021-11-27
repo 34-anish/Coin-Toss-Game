@@ -8,10 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -35,20 +32,33 @@
           </div>
         </div>
 
-        <span class="player-score">
-          Human
-          <div class="score-head player-score-head">Heads:1</div>
-          <div class="score-body player-score-body">Tails:3</div>
-          <div class="score-foot player-score-foot">
-            Last occurance:<strong> Tail</strong>
+        <div class="player-score">
+          <div class="score-head player-score-head">
+            <img src="https://i.stack.imgur.com/ShsIw.jpg?s=256&g=1" alt="Player Image" />
+            <p class="player-name">Arun</p>
           </div>
-        </span>
+          <div class="score-body player-score-body">
+            <ul class="player-last-five-scores"></ul>
+          </div>
+          <div class="score-foot player-score-foot">
+            <p class="total-wins">Total wins: <span class="player-wins">0</span></p>
+          </div>
+        </div>
 
         <div class="computer-score">
-          Computer
-          <div class="score-head computer-score-head">Heads:2</div>
-          <div class="score-body computer-score-body">Tails:1</div>
-          <div class="score-foot computer-score-foot">Last occurance: Tail</div>
+          <div class="score-head computer-score-head">
+            <img
+              src="https://image.shutterstock.com/image-photo/desktop-computer-monitor-isolated-on-260nw-1906993810.jpg"
+              alt="Computer Image"
+            />
+            <p class="computer-name">Computer</p>
+          </div>
+          <div class="score-body computer-score-body">
+            <ul class="computer-last-five-scores"></ul>
+          </div>
+          <div class="score-foot computer-score-foot">
+            <p class="total-wins">Total wins: <span class="computer-wins">0</span></p>
+          </div>
         </div>
       </section>
 
