@@ -1,6 +1,6 @@
 /* ==========================
-BASIC CSS
-========================== */
+BASIC CSS 
+=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -74,7 +74,7 @@ span {
 
 button {
   font-family: inherit;
-  padding: 0.75rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   outline: none;
   border: none;
   border-radius: var(--small-border-radius);
@@ -274,4 +274,20 @@ FOOTER CSS
   font-size: 150%;
   text-align: center;
   margin-top: 2rem;
+
+}
+
+/* ==========================
+MEDIA QUERIES
+========================== */
+
+@media only screen and (max-width: 1100px) {
+  html {
+    font-size: 58%;
+  }
+
+  .game-body {
+    flex-direction: column;
+  }
+
 }
