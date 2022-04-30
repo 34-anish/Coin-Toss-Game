@@ -20,10 +20,10 @@ function resetGame() {
   const computerList = document.querySelector('.computer-last-five-scores');
 
   playerArray = [];
-  computerArray = [];
+  let computerArray = [],
 
-  totalGames = 0;
-  playerWins = 0;
+  totalGames = 0,
+  playerWins = 0,
   computerWins = 0;
 
   winPercetageSpan.innerHTML = "0%";
@@ -51,10 +51,6 @@ function tossCoin() {
 
   return coinTossResult;
 }
-
-
-let playerArray = [];
-let computerArray = [];
 
 // 1 - array length is less than 5
 // 2 - array length is greater than 5
