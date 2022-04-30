@@ -213,16 +213,6 @@ total wins / total games * 100
 
 */
 
-const winPercentage = document.querySelector('.score-view');
-const tossCoinBtn = document.querySelectorAll('.game-buttons button')[0];
-const resetGameBtn = document.querySelectorAll('.game-buttons button')[1];
-
-const totalPlayerWins = document.querySelector('.total-wins .player-wins');
-const totalComputerWins = document.querySelector('.total-wins .computer-wins');
-
-const playerLastFiveScores = document.querySelector('.player-last-five-scores');
-const computerLastFiveScores = document.querySelector('.computer-last-five-scores');
-
 function tossCoin() {
   const coinOutput = document.querySelector('.coin-div-inner');
   coinOutput.innerHTML = '';
