@@ -212,7 +212,7 @@ tossCoinBtn.addEventListener('click', function () {
 total wins / total games * 100
 
 */
-=======
+
 const winPercentage = document.querySelector('.score-view');
 const tossCoinBtn = document.querySelectorAll('.game-buttons button')[0];
 const resetGameBtn = document.querySelectorAll('.game-buttons button')[1];
