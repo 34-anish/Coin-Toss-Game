@@ -281,7 +281,7 @@ function insertComputerResult(computerArray, arrayLength, computerList) {
   }
 }
 
-let totalGames = 0;
+// let totalGames = 0;
 
 tossCoinBtn.addEventListener('click', function () {
   tossCoinBtn.style.pointerEvents = 'none';
