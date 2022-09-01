@@ -104,10 +104,11 @@ function insertComputerResult(computerArray, arrayLength, computerList) {
 resetGameBtn.addEventListener("click", function () {
   resetGame();
 });
-
+/*
 let totalGames = 0;
 let playerWins = 0;
 let computerWins = 0;
+*/
 tossCoinBtn.addEventListener('click', function () {
   
   tossCoinBtn.style.pointerEvents = 'none';
